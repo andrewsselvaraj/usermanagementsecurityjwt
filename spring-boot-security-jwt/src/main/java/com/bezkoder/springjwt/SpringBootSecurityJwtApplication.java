@@ -8,6 +8,11 @@ public class SpringBootSecurityJwtApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootSecurityJwtApplication.class, args);
+		//https://bezkoder.com/spring-boot-jwt-authentication/
+		System.out.println("https://bezkoder.com/spring-boot-jwt-authentication/");
 	}
+	
+	
+	
 
 }

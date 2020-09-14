@@ -14,6 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.bezkoder.springjwt.models.LoggerInfo;
+import com.bezkoder.springjwt.repository.LoggerRepository;
 import com.bezkoder.springjwt.security.jwt.AuthEntryPointJwt;
 import com.bezkoder.springjwt.security.jwt.AuthTokenFilter;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
@@ -27,6 +29,8 @@ import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
+	
+
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
@@ -57,6 +61,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	{
 		try
 		{
+			//LoggerInfo l = new LoggerInfo();
+			//l.setId(id);
+			//loggerrepo.save();
+			
+			
 		http.cors().and().csrf().disable()
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
